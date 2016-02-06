@@ -1,0 +1,29 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+# Uncomment the following verifier to leverage Inspec instead of Busser (the
+# default verifier)
+# verifier:
+#   name: inspec
+
+platforms:
+  - name: centos-6.6
+    run_list:
+      - recipe[yum]
+  - name: ubuntu-14.04
+    run_list:
+      - recipe[apt]
+
+suites:
+  - name: default
+    run_list:
+      - recipe[iim::default]
+# overriding attribute for installer location. In a real Chef Server environment, use a role instead
+    attributes:
+      im:
+        install_zip:
+          url: "https://s3.amazonaws.com/ibm-artifacts/ibm-iim/agent.installer.linux.gtk.x86_64_1.8.4000.20151125_0201.zip"

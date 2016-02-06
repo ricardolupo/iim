@@ -172,19 +172,6 @@ iim_response_file_install 'Websphere 8.5.5' do
 end
 ```
 
-# Contributing
-
-Please see our [contributing guide](https://github.com/WASdev/wasdev.github.io/blob/master/CONTRIBUTING.md).
-
-
-# Support
-
-Use the [issue tracker][] for reporting any bugs or enhancements. For any questions please use the [WASdev forum](https://developer.ibm.com/answers/?community=wasdev).
-
-[issue tracker]: https://github.com/WASdev/ci.chef.iim/issues
-
-The cookbook is maintained by IBM.
-
 # License
 
 ```text

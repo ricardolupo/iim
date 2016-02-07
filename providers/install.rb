@@ -44,7 +44,7 @@ action :install do
       end
    end
 
-   install_command = "/usr/bin/sudo -u #{im_user} #{im_dir}/imcl #{install_command_snippet} -showProgress -accessRights #{im_mode} -acceptLicense -log /tmp/install_log.xml #{credentials_bash_snippet}"
+   install_command = "#{im_dir}/imcl #{install_command_snippet} -showProgress -accessRights #{im_mode} -acceptLicense -log /tmp/install_log.xml #{credentials_bash_snippet}"
 
    raise "Invalid characters found in install_command. Valid charachters are a-z, A-Z, 0-9, '-', '\\' and whitespace" unless install_command =~ /[0-9|a-z|A-Z|\s|\\|\-]*/
 
@@ -63,7 +63,7 @@ end
 
 def _log_security_choice(cookbook_provided_secure_storage_file, cookbook_provided_master_password_file)
     node_master_password_file = node[:im][:master_password_file]
-    node_secure_storage_file = node[:im][:secure_storeage_file]
+    node_secure_storage_file = node[:im][:secure_storage_file]
 
     log_level = :info
     message = ""

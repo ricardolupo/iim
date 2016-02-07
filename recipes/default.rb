@@ -96,5 +96,5 @@ execute 'imcl install' do
   # if this is not set the installer will fail because it cannot lock files below /opt/IBM/IM/installationLocation/configuration
   # see https://www-304.ibm.com/support/docview.wss?uid=swg21455334
   umask '013' if im_mode == 'im_group'
-  not_if { ::File.exist?("#{scratch_dir}" + "/tools/imcl") }
+  # not_if { ::File.exist?("#{scratch_dir}" + "/tools/imcl") }
 end
